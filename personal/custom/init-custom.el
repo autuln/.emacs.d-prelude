@@ -91,6 +91,19 @@
 ;;  (global-display-line-numbers-mode))
 
 
+;; reload emacs configuration ~/.emacs.d/init.el
+(defun reload-init-file ()
+  (interactive)
+  (load-file user-init-file))
+;; (global-set-key (kbd "C-c C-l") 'reload-init-file)
+
+;; reload emacs configuration
+(defun reload-init-custom-file ()
+  (interactive)
+  (load-file "~/.emacs.d/personal/custom.el"))
+(global-set-key (kbd "C-c C-l") 'reload-init-custom-file)
+
+
 (message "custom config end")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;config end;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
