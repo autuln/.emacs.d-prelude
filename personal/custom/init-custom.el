@@ -113,6 +113,18 @@
 ;; (when (eq system-type 'gnu/linux)
 ;;   (require 'prelude-linux))
 
+
+;; Windows 환경에서 Emacs를 사용할 경우, ssh 프로토콜을 통해 tramp를 사용하고 싶다면 putty의 plink를 사용해야 한다.
+;; 다운 받은 plink.exe를 실행 PATH가 걸려 있는 적절한 위치에 넣어 준다
+
+(when (eq system-type 'windows-nt)
+  (when (executable-find "plink")
+    (require 'tramp)
+    (setq-default tramp-default-method "plink")))
+
+
+
+
 (message "custom config end")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;config end;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
