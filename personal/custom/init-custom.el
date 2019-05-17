@@ -104,6 +104,15 @@
 (global-set-key (kbd "C-c C-l") 'reload-init-custom-file)
 
 
+;; macOS specific settings
+;; (when (eq system-type 'darwin)
+;;  (setq mac-command-modifier 'control)
+;;  (setq mac-control-modifier 'command))
+
+;; Linux specific settings
+;; (when (eq system-type 'gnu/linux)
+;;   (require 'prelude-linux))
+
 (message "custom config end")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;config end;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
