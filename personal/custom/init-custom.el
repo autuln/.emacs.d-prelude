@@ -66,6 +66,8 @@
 (require 'package-magit) ;; package-install magit
 ;;(require 'package-workgroups) ;; package-install workgroups2
 
+(require 'package-treemacs) ;; package-install treemacs
+
 (message "Complite package's list...")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;package end;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
