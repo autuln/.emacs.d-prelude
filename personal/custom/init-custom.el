@@ -68,6 +68,8 @@
 
 (require 'package-treemacs) ;; package-install treemacs
 
+(require 'package-org-mode) ;; package-install org-mode
+
 (message "Complite package's list...")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;package end;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
