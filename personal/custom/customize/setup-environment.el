@@ -69,3 +69,44 @@
                                    "dired-mode"
                                    ))
 (golden-ratio-mode)
+
+;;;;;;;;;;;;;;;;;;;;;; rsm ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;; macOS specific settings
+;; (when (eq system-type 'darwin)
+;;  (setq mac-command-modifier 'control)
+;;  (setq mac-control-modifier 'command))
+
+;;;;;;;;;;;;;;;;;;;;;; Linux specific settings
+;; (when (eq system-type 'gnu/linux)
+;;   (require 'prelude-linux))
+
+;;;;;;;;;;;;;;;;;;;;;; Windows specific settings
+;; Windows 환경에서 Emacs를 사용할 경우, ssh 프로토콜을 통해 tramp를 사용하고 싶다면 putty의 plink를 사용해야 한다.
+;; 다운 받은 plink.exe를 실행 PATH가 걸려 있는 적절한 위치에 넣어 준다
+(when (eq system-type 'windows-nt)
+  (when (executable-find "plink")
+    (require 'tramp)
+    (setq-default tramp-default-method "plink")))
+	
+;; for linux like environment in windows
+;; http://ohyecloudy.com/emacsian/2017/04/08/windows-gcc-git-for-windows-sdk/
+;; http://ohyecloudy.com/emacsian/2014/01/26/bash-shell-on-windows/
+;; base : choco install -y msys2
+;; setting : (base-dir "C:/tools/msys64")
+(when (eq system-type 'windows-nt)
+  (let* ((combine-path (lambda (dir dir-or-file)
+                         (concat (file-name-as-directory dir) dir-or-file)))
+         (base-dir "C:/tools/msys64")
+         (msys2-bin-dir (funcall combine-path base-dir "usr/bin"))
+         (mingw64-bin-dir (funcall combine-path base-dir "mingw64/bin"))
+         (bash-path (funcall combine-path msys2-bin-dir "bash.exe")))
+    (add-to-list 'exec-path msys2-bin-dir)
+    (add-to-list 'exec-path mingw64-bin-dir)
+    (setq explicit-shell-file-name bash-path)
+    (setq shell-file-name bash-path)
+    (setenv "SHELL" bash-path)
+    (setq explicit-bash.exe-args '("--noediting" "--login" "-i"))
+    (setenv "PATH" (concat mingw64-bin-dir path-separator
+                           (concat msys2-bin-dir path-separator
+                                   (getenv "PATH"))))))
