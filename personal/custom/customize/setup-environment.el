@@ -88,8 +88,8 @@
   (when (executable-find "plink")
     (require 'tramp)
     (setq-default tramp-default-method "plink")))
-	
-;; for linux like environment in windows
+
+;; for linux like environment in windows(M-x shell or M-x ehsell)
 ;; http://ohyecloudy.com/emacsian/2017/04/08/windows-gcc-git-for-windows-sdk/
 ;; http://ohyecloudy.com/emacsian/2014/01/26/bash-shell-on-windows/
 ;; base : choco install -y msys2
@@ -110,3 +110,11 @@
     (setenv "PATH" (concat mingw64-bin-dir path-separator
                            (concat msys2-bin-dir path-separator
                                    (getenv "PATH"))))))
+
+;; for linux like environment in windows(M-x term or C-c t)
+;; https://stackoverflow.com/questions/20263012/m-x-term-with-emacs-on-ms-windows-error-spawning-child-process-invalid-argum/32629342
+;; C:\bin>mklink sh C:\tools\msys64\usr\bin\bash.exe
+;; sh <<===>> C:\tools\msys64\usr\bin\bash.exe에 대한 기호화된 링크를 만들었습니다.
+;; or
+;; C:\bin>mklink sh %windir%\system32\cmd.exe
+;; sh <<===>> C:\Windows\system32\cmd.exe에 대한 기호화된 링크를 만들었습니다.
