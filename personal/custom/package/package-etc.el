@@ -27,3 +27,8 @@
    helm-swoop-map
    ("M-i" . helm-multi-swoop-all-from-helm-swoop)
    ("M-m" . helm-multi-swoop-current-mode-from-helm-swoop)))
+
+;; iedit
+;; https://github.com/victorhge/iedit
+(use-package iedit
+  :ensure t)
