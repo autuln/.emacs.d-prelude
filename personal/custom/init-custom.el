@@ -70,6 +70,8 @@
 
 (require 'package-org-mode) ;; package-install org-mode
 
+(require 'package-etc) ;; package-etc
+
 (message "Complite package's list...")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;package end;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
