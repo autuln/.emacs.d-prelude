@@ -11,3 +11,19 @@
   (add-to-list 'rm-blacklist " WS" t)
   (add-to-list 'rm-blacklist " Undo-Tree" t)
   (add-to-list 'rm-blacklist " Wrap" t))
+
+
+;; helm-swoop
+;; https://github.com/ShingoFukuyama/helm-swoop
+;; http://ohyecloudy.com/emacsian/2018/01/07/package-helm-swoop-basic/
+(use-package helm-swoop
+  :ensure t
+  :bind
+  (("M-i" . helm-swoop)
+   ("M-I" . helm-swoop-back-to-last-point)
+   ("C-c M-i" . helm-multi-swoop)
+   ("C-x M-i" . helm-multi-swoop-all)
+   :map
+   helm-swoop-map
+   ("M-i" . helm-multi-swoop-all-from-helm-swoop)
+   ("M-m" . helm-multi-swoop-current-mode-from-helm-swoop)))
