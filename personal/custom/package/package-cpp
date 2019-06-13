@@ -1,0 +1,8 @@
+(provide 'package-cpp)
+;;; package-cpp --- autuln's configuration entry point.
+
+
+;; iedit
+;; https://github.com/victorhge/iedit
+(use-package iedit
+  :ensure t)

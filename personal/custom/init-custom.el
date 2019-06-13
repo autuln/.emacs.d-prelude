@@ -32,56 +32,16 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;config sample;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;customize start;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(message "Loading setup's list...")
-(add-to-list 'load-path "~/.emacs.d/personal/custom/customize/")
-;; the setup stuff
-(require 'setup-applicatoins)
-(require 'setup-async)
-(require 'setup-beacon)
-(require 'setup-communication)
-(require 'setup-convenience)
-(require 'setup-data)
-(require 'setup-development)
-(require 'setup-editing)
-(require 'setup-environment)
-(require 'setup-external)
-(require 'setup-faces)
-(require 'setup-files)
-(require 'setup-help)
-(require 'setup-local)
-(require 'setup-multimedia)
-(require 'setup-programming)
-(require 'setup-text)
-(message "Complite setup's list...")
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;customize end;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;init.d start;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(message "Loading init.d")
+(add-to-list 'load-path "~/.emacs.d/personal/custom/init.d/")
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;package start;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(message "Loading package's list...")
-(add-to-list 'load-path "~/.emacs.d/personal/custom/package/")
-;; the package stuff
-(require 'package-use-package) ;; package-install use-package
-;;(require 'package-helm) ;; package-install helm
-;;(require 'package-web-mode) ;; package-install web-mode
-(require 'package-magit) ;; package-install magit
-;;(require 'package-workgroups) ;; package-install workgroups2
+(require 'init-start)
 
-(require 'package-treemacs) ;; package-install treemacs
+(require 'init-end)
+(message "Complite init.d")
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;init.d end;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(require 'package-org-mode) ;; package-install org-mode
-
-(require 'package-etc) ;; package-etc
-
-(message "Complite package's list...")
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;package end;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;install start;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(message "custom install start...")
-
-
-(message "custom install end")
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;install end;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;config start;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (message "custom config start...")
