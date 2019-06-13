@@ -24,13 +24,13 @@
 ;;group: Programming -> Tools -> Compilation
 
 ;; Emacs에서 Compilation
-(defun prelude-colorize-compilation-buffer ()
-  "Colorize a compilation mode buffer."
-  (interactive)
-  ;;grep-mode, ack, ag, 등과 같은 자식 모드를 망가트리고 싶지 않습니다.
-  (when (eq major-mode 'compilation-mode)
-    (let ((inhibit-read-only t))
-      (ansi-color-apply-on-region (point-min ) (point-max)))))
+;; (defun prelude-colorize-compilation-buffer ()
+;;   "Colorize a compilation mode buffer."
+;;   (interactive)
+;;   ;;grep-mode, ack, ag, 등과 같은 자식 모드를 망가트리고 싶지 않습니다.
+;;   (when (eq major-mode 'compilation-mode)
+;;     (let ((inhibit-read-only t))
+;;       (ansi-color-apply-on-region (point-min ) (point-max)))))
 
 ;; 'compile' 명령에 따라 사용되는 compilation-mode 설정
 (require 'compile)
@@ -42,14 +42,14 @@
 ;;;;;;;;;
 ;; group: Programming -> Tools -> MakeFile
 ;; takenn from prelude-c.el:48: https://github.com/bbatsov/prelude/blob/master/modules/prelude-c.el
-(defun prelude-makefile-mode-defaults ()
-  (whitespace-toggle-options '(tabs))
-  (setq indent-tabs-mode t ))
+;; (defun prelude-makefile-mode-defaults ()
+;;   (whitespace-toggle-options '(tabs))
+;;   (setq indent-tabs-mode t ))
 
-(setq prelude-makefile-mode-hook 'prelude-makefile-mode-defaults)
+;; (setq prelude-makefile-mode-hook 'prelude-makefile-mode-defaults)
 
-(add-hook 'makefile-mode-hook (lambda ()
-                                (run-hooks 'prelude-makefile-mode-hook)))
+;; (add-hook 'makefile-mode-hook (lambda ()
+;;                                 (run-hooks 'prelude-makefile-mode-hook)))
 
 ;;;;;;;;;
 ;; group: Programming -> Tools ->Ediff
