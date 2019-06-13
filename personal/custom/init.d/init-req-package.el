@@ -2,8 +2,9 @@
 ;;; init-req-package.el --- autuln's configuration entry point.
 
 
-;; (use-package req-package
-;;  :ensure t)
+(use-package req-package
+  :ensure t
+  :config (req-package--log-set-level 'debug))
 
 ;; https://github.com/edvorg/req-package
 ;; https://melpa.org/#/req-package

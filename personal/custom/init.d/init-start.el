@@ -10,11 +10,11 @@
 ;; elpa
 (add-to-list 'package-archives
              '("gnu" . "https://elpa.gnu.org/packages/"))
-;; (add-to-list 'package-archives
-;;              '("marmalade" . "https://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives
              '("org" . "https://orgmode.org/elpa/") t)
-
+;; (add-to-list 'package-archives
+;;              '("marmalade" . "https://marmalade-repo.org/packages/"))
+;; 경고 뜸
 
 ;; require-package
 (defun require-package (package)
@@ -29,22 +29,24 @@
                    (package-install package)))
              (require package))))
 
+;; install package
 (require 'init-use-package) ;; package-install use-package
 (require 'init-req-package) ;; package-install req-package
 
+
 ;; el-get
-;; (require 'req-package)
-;; (req-package el-get ;; prepare el-get (optional)
-;;             :force t ;; load package immediately, no dependency resolution
-;;             :config
-;;             (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get/el-get/recipes")
-;;             (el-get 'sync))
+(require 'req-package)
+(req-package el-get ;; prepare el-get (optional)
+             :force t ;; load package immediately, no dependency resolution
+             :config
+             (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get/el-get/recipes")
+             (el-get 'sync))
 
 
 ;; :el-get keyword for use-package
-;; (use-package use-package-el-get
-;;   :ensure t
-;;   :config (use-package-el-get-setup))
+(use-package use-package-el-get
+  :ensure t
+  :config (use-package-el-get-setup))
 
 ;; chords
 (use-package use-package-chords

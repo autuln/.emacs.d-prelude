@@ -35,9 +35,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;init.d start;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (message "Loading init.d")
 (add-to-list 'load-path "~/.emacs.d/personal/custom/init.d/")
-
 (require 'init-start)
-
 (require 'init-end)
 (message "Complite init.d")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;init.d end;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
