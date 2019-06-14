@@ -19,4 +19,5 @@
   (req-package-finish)
   (funcall 'select-theme))
 
+;; (load "~/.emacs.d/personal/custom/init.d/init-bindings.el")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;base end;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

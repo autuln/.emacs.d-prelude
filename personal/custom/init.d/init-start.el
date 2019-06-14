@@ -8,8 +8,12 @@
   (server-start))
 
 ;; elpa
-(add-to-list 'package-archives
-             '("gnu" . "https://elpa.gnu.org/packages/"))
+(if (eq system-type 'windows-nt)
+    (add-to-list 'package-archives
+                 '("gnu" . "http://elpa.gnu.org/packages/"))
+    (add-to-list 'package-archives
+                 '("gnu" . "https://elpa.gnu.org/packages/")))
+
 (add-to-list 'package-archives
              '("org" . "https://orgmode.org/elpa/") t)
 ;; (add-to-list 'package-archives
@@ -48,9 +52,6 @@
   :ensure t
   :config (use-package-el-get-setup))
 
-;; chords
-(use-package use-package-chords
-  :ensure t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;base end;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
