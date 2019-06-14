@@ -11,8 +11,8 @@
 (if (eq system-type 'windows-nt)
     (add-to-list 'package-archives
                  '("gnu" . "http://elpa.gnu.org/packages/"))
-    (add-to-list 'package-archives
-                 '("gnu" . "https://elpa.gnu.org/packages/")))
+  (add-to-list 'package-archives
+               '("gnu" . "https://elpa.gnu.org/packages/")))
 
 (add-to-list 'package-archives
              '("org" . "https://orgmode.org/elpa/") t)
@@ -68,6 +68,8 @@
 (require 'package-treemacs) ;; package-install treemacs
 
 (require 'package-org-mode) ;; package-install org-mode
+
+(require 'package-cpp) ;; package-cpp
 
 (require 'package-etc) ;; package-etc
 
