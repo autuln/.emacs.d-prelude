@@ -69,9 +69,9 @@
 
 (require 'package-org-mode) ;; package-install org-mode
 
-;; (require 'package-cpp) ;; package-cpp
+(require 'package-cpp) ;; package-cpp
 
-(require 'package-lsp-mode) ;; package-lsp-mode
+;; (require 'package-lsp-mode) ;; package-lsp-mode
 
 (require 'package-etc) ;; package-etc
 

@@ -3,6 +3,22 @@
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;base start;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package hydra)
+(use-package helm)
+(use-package helm-lsp
+  :commands helm-lsp-workspace-symbol
+  :config
+  (defun netrom/helm-lsp-workspace-symbol-at-point ()
+    (interactive)
+    (let ((current-prefix-arg t))
+      (call-interactively #'helm-lsp-workspace-symbol)))
+
+  (defun netrom/helm-lsp-global-workspace-symbol-at-point ()
+    (interactive)
+    (let ((current-prefix-arg t))
+      (call-interactively #'helm-lsp-global-workspace-symbol))))
+
+
 (use-package lsp-mode
   :commands lsp
   :requires hydra helm helm-lsp
@@ -83,22 +99,6 @@
   (setq company-transformers nil
         company-lsp-async t
         company-lsp-cache-candidates nil))
-
-
-(use-package hydra)
-(use-package helm)
-(use-package helm-lsp
-  :commands helm-lsp-workspace-symbol
-  :config
-  (defun netrom/helm-lsp-workspace-symbol-at-point ()
-    (interactive)
-    (let ((current-prefix-arg t))
-      (call-interactively #'helm-lsp-workspace-symbol)))
-
-  (defun netrom/helm-lsp-global-workspace-symbol-at-point ()
-    (interactive)
-    (let ((current-prefix-arg t))
-      (call-interactively #'helm-lsp-global-workspace-symbol))))
 
 (use-package lsp-treemacs :commands lsp-treemacs-errors-list)
 ;; optionally if you want to use debugger
