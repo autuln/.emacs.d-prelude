@@ -4,7 +4,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;base start;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; start emacs server
 
-(defconst elisp-dir "~/.emacs.d/personal/custom/elisp.d/")
+ (defconst elisp-dir "~/.emacs.d/personal/custom/elisp.d/")
 
 (require 'req-package)
 (req-package load-dir

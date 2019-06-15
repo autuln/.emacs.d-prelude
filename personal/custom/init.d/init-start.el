@@ -71,6 +71,8 @@
 
 (require 'package-cpp) ;; package-cpp
 
+(require 'package-lsp-mode) ;; package-lsp-mode
+
 (require 'package-etc) ;; package-etc
 
 (message "Complite package's list...")
