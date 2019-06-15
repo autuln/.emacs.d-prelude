@@ -2,6 +2,7 @@
 ;;; package-cpp-rtags --- autuln's configuration entry point.
 
 (req-package rtags
+  :ensure t
   :config
   (progn
     (unless (rtags-executable-find "rc") (error "Binary rc is not installed!"))
@@ -20,6 +21,7 @@
 
 ;; TODO: Has no coloring! How can I get coloring?
 (req-package helm-rtags
+  :ensure t
   :require helm rtags
   :config
   (progn
@@ -28,6 +30,7 @@
 
 ;; Use rtags for auto-completion.
 (req-package company-rtags
+  :ensure t
   :require company rtags
   :config
   (progn
@@ -39,6 +42,7 @@
 
 ;; Live code checking.
 (req-package flycheck-rtags
+  :ensure t
   :require flycheck rtags
   :config
   (progn

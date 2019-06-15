@@ -2,6 +2,7 @@
 ;;; package-cpp-irony --- autuln's configuration entry point.
 
 (req-package irony
+  :ensure t
   :config
   (progn
     ;; If irony server was never installed, install it.
@@ -18,21 +19,24 @@
   ))
 
   ;; I use irony with company to get code completion.
-  (req-package company-irony
+(req-package company-irony
+    :ensure t
     :require company irony
     :config
     (progn
       (eval-after-load 'company '(add-to-list 'company-backends 'company-irony))))
 
   ;; I use irony with flycheck to get real-time syntax checking.
-  (req-package flycheck-irony
+(req-package flycheck-irony
+    :ensure t
     :require flycheck irony
     :config
     (progn
       (eval-after-load 'flycheck '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))))
 
   ;; Eldoc shows argument list of the function you are currently writing in the echo area.
-  (req-package irony-eldoc
+(req-package irony-eldoc
+    :ensure t
     :require eldoc irony
     :config
     (progn
