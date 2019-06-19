@@ -77,9 +77,27 @@
 ;;  (setq mac-command-modifier 'control)
 ;;  (setq mac-control-modifier 'command))
 
+(defun swap-control-and-super ()
+  "Swap the mapping of Control and Super.
+Very useful for people using their Mac with a
+Windows external keyboard from time to time."
+  (interactive)
+  (if (eq mac-command-modifier 'super)
+      (progn
+        (setq mac-command-modifier 'control)
+        (setq mac-control-modifier 'super)
+        (message "Command is now bound to Control and Control is bound to SUPER."))
+    (setq mac-command-modifier 'super)
+    (setq mac-control-modifier 'control)
+    (message "Command is now bound to SUPER and Control is bound to Control.")))
+
+(when (eq system-type 'darwin)
+    (swap-control-and-super))
+
 ;;;;;;;;;;;;;;;;;;;;;; Linux specific settings
 ;; (when (eq system-type 'gnu/linux)
 ;;   (require 'prelude-linux))
+
 
 ;;;;;;;;;;;;;;;;;;;;;; Windows specific settings
 ;; Windows 환경에서 Emacs를 사용할 경우, ssh 프로토콜을 통해 tramp를 사용하고 싶다면 putty의 plink를 사용해야 한다.
