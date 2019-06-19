@@ -91,8 +91,8 @@ Windows external keyboard from time to time."
     (setq mac-control-modifier 'control)
     (message "Command is now bound to SUPER and Control is bound to Control.")))
 
-(when (eq system-type 'darwin)
-    (swap-control-and-super))
+;; (when (eq system-type 'darwin)
+;;    (swap-control-and-super))
 
 ;;;;;;;;;;;;;;;;;;;;;; Linux specific settings
 ;; (when (eq system-type 'gnu/linux)
