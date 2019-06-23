@@ -139,6 +139,5 @@ Windows external keyboard from time to time."
 
 ;; M-x shell이 ansi 모드로 실행되도록 설정
 ;; http://seorenn.blogspot.com/2011/03/emacs-shell.html
-;; 이 설정이 없으면 shell 에서 ls 가 안되며 대신 /bin/ls 로 해야 된다.
-(autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
-(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+;; (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
+;; (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
