@@ -69,8 +69,9 @@
 
 
 
-(setq evil-default-state 'emacs) ;; changes default state to emacs
+;; (setq evil-default-state 'emacs) ;; changes default state to emacs
 
+(setq evil-default-state 'normal) ;; changes default state to normal
 
 (message "custom config end")
 
