@@ -141,3 +141,22 @@ Windows external keyboard from time to time."
 ;; http://seorenn.blogspot.com/2011/03/emacs-shell.html
 ;; (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
 ;; (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+
+
+;; for hangul in windows eshell
+(when (eq system-type 'windows-nt)
+  (when enable-multibyte-characters
+    (set-language-environment "Korean")
+    (setq locale-value
+          (if (string= (getenv "LANG") "ko_KR.utf8") 'utf-8 'euc-kr))
+    (prefer-coding-system locale-value)
+    (set-default-coding-systems locale-value)
+    (setq-default file-name-coding-system locale-value)
+    (setq-default locale-coding-system locale-value)
+    (set-terminal-coding-system locale-value)
+    (set-keyboard-coding-system locale-value)
+    (set-selection-coding-system locale-value)
+    )
+  (when (string-match "^3" (or (getenv "HANGUL_KEYBOARD_TYPE") ""))
+    (setq default-korean-keyboard "3")
+    (setq default-input-method "korean-hangul3")))
