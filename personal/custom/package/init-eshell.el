@@ -146,8 +146,10 @@
        (concat "Copied path: " fpath)))
 
 ;; 1.13 Creating Eshell aliases programatically
+(require 'eshell)
+(require 'em-alias)
+(require 'cl)
+
 (eshell/alias "ff" "find-file $1")
-
 (eshell/alias "fw" "find-file-other-window $1")
-
 (eshell/alias "fr" "find-file-other-frame $1")
