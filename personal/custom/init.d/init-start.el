@@ -73,6 +73,8 @@
 
 ;; (require 'package-lsp-mode) ;; package-lsp-mode
 
+(require 'init-eshell) ;; init-eshell
+
 (require 'package-etc) ;; package-etc
 
 (message "Complite package's list...")
