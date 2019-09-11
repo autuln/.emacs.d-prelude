@@ -160,3 +160,15 @@ Windows external keyboard from time to time."
   (when (string-match "^3" (or (getenv "HANGUL_KEYBOARD_TYPE") ""))
     (setq default-korean-keyboard "3")
     (setq default-input-method "korean-hangul3")))
+
+
+;; for windows tramp and ssh
+;; https://www.emacswiki.org/emacs/Tramp_on_Windows
+;; base : choco install -y putty
+(when (eq window-system 'w32)
+  (setq tramp-default-method "plink")
+  (setq putty-directory "C:/ProgramData/chocolatey/bin")
+  (when (and (not (string-match putty-directory (getenv "PATH")))
+	     (file-directory-p putty-directory))
+    (setenv "PATH" (concat putty-directory ";" (getenv "PATH")))
+    (add-to-list 'exec-path putty-directory)))
